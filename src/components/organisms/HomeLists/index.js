@@ -1,29 +1,27 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-
+import { ListContainer } from './styles';
 import { Text } from '../../atoms';
 import { Card } from '../../molecules';
+import { theme } from '~/styles';
 
-const FAKE_DATA = [
-  {
-    id: 0,
-    image_url:
-      'https://sm.ign.com/ign_br/screenshot/default/darth-vader_5yvm.jpg',
-  },
-  {
-    id: 1,
-    image_url:
-      'https://s2.glbimg.com/QqEDyJyWVPTI9tU-5izKpJls6UE=/620x520/smart/e.glbimg.com/og/ed/f/original/2020/11/30/baby-yoda.jpg',
-  },
-];
-
-export const HomeList = () => {
+export const HomeList = ({ data, title }) => {
   return (
-    <FlatList
-      horizontal
-      data={FAKE_DATA}
-      renderItem={({ item }) => <Card item={item} />}
-      keyExtractor={(item) => String(item.id)}
-    />
+    <ListContainer>
+      <Text ml={24} fontFamily="black" size={18}>
+        {title}
+      </Text>
+      <FlatList
+        horizontal
+        data={data}
+        renderItem={({ item }) => <Card item={item} />}
+        keyExtractor={(item) => String(item.id)}
+        contentContainerStyle={{
+          paddingLeft: theme.metrics.px(24),
+          paddingTop: theme.metrics.px(12),
+          paddingBottom: theme.metrics.px(24),
+        }}
+      />
+    </ListContainer>
   );
 };
