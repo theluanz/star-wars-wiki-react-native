@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
 import { Text, Logo, Container } from '../../components';
+import { StyleSheet, View } from 'react-native';
 
 export const SplashScreen = ({ navigation }) => {
   useEffect(() => {
