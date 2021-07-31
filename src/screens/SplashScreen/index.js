@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect } from 'react';
-import { Text, Logo, Container } from '../../components';
-import { StyleSheet, View } from 'react-native';
+import { Text, Logo, Container } from '~/components';
 
 export const SplashScreen = ({ navigation }) => {
   useEffect(() => {
@@ -13,7 +12,9 @@ export const SplashScreen = ({ navigation }) => {
   return (
     <Container align="center" justify="center">
       <Logo />
-      <Text>Star Wars - Wiki</Text>
+      <Text fontFamily="bold" mt={12}>
+        Star Wars - Wiki
+      </Text>
       <StatusBar style="auto" />
     </Container>
   );

@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
+
 export const HeroContainer = styled.View`
   display: flex;
   flex-direction: column;

@@ -1,8 +1,7 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 import { ListContainer } from './styles';
-import { Text } from '../../atoms';
-import { Card } from '../../molecules';
+import { Text, Card } from '~/components';
 import { theme } from '~/styles';
 
 export const HomeList = ({ data, title, type }) => {

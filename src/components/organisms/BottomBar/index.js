@@ -1,7 +1,7 @@
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { Text } from '~/components/atoms';
-import { BottomBarContainer, BarItem } from './style';
+import { BottomBarContainer, BarItem } from './styles';
 import { theme } from '~/styles/theme';
 const routeIcons = {
   Home: 'home-outline',
