@@ -9,8 +9,12 @@ import { colors } from '~/styles/colors';
 import { Text, Logo } from '~/components/atoms';
 import { Tag, IconButton, PlayButton } from '~/components/molecules';
 import { useFavorites } from '~/services/hooks';
+import { useNavigation } from '@react-navigation/core';
+import { useDataStore } from '~/services/stores';
 
 export const Hero = ({ item, onDetail }) => {
+  const navigation = useNavigation();
+  const { setSelectedData } = useDataStore();
   const [loading, setLoading] = useState(true);
   const [isFavorite, setIsFavorite] = useState(false);
   const { image_url, title, subtitle, type } = item;
@@ -40,6 +44,11 @@ export const Hero = ({ item, onDetail }) => {
     checkIsFavorite();
   };
 
+  const onPressWatch = () => {
+    setSelectedData(item);
+    navigation.navigate('Watch');
+  };
+
   return (
     <HeroContainer>
       <HeroImageBackground
@@ -66,7 +75,7 @@ export const Hero = ({ item, onDetail }) => {
                 !isFavorite ? 'add-circle-outline' : 'remove-circle-outline'
               }
             />
-            <PlayButton />
+            <PlayButton onPress={onPressWatch} />
             {!onDetail && (
               <IconButton
                 label="Saiba mais"
