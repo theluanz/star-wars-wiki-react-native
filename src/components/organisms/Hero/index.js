@@ -19,7 +19,6 @@ import { useDataStore } from '~/services/stores';
 
 export const Hero = ({ item, onDetail }) => {
   const navigation = useNavigation();
-  const [loading, setLoading] = useState(true);
   const [isFavorite, setIsFavorite] = useState(false);
   const [showFavoriteModal, setShowFavoriteModal] = useState(null);
   const { setSelectedData } = useDataStore();
@@ -27,14 +26,11 @@ export const Hero = ({ item, onDetail }) => {
   const { addFavorite, getFavorites, removeFavorite } = useFavorites();
 
   const checkIsFavorite = async () => {
-    setLoading(true);
     const favorites = await getFavorites();
-    // console.log({ favorites });
     const isInFavorite = favorites.filter(
       (favorite) => favorite.id === item.id && favorite.type === item.type
     );
     setIsFavorite(isInFavorite.length > 0);
-    setLoading(false);
   };
 
   const closeFavoriteModal = () => {

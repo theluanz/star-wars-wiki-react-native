@@ -16,7 +16,6 @@ export const SearchScreen = () => {
       setResults(result);
     }
     setLoading(false);
-    // console.log(result);
   };
 
   useEffect(() => {

@@ -16,11 +16,9 @@ export const useFavorites = () => {
       }
       const jsonValue = JSON.stringify(newDb);
       await AsyncStorage.setItem(DB_KEY, jsonValue);
-      console.log({ newDb });
 
       return newDb;
     } catch (error) {
-      console.log({ error });
       return { error };
     }
   };
@@ -29,8 +27,6 @@ export const useFavorites = () => {
     const value = await AsyncStorage.getItem(DB_KEY);
     if (value !== null) {
       const db = JSON.parse(value);
-      console.log({ db });
-
       return db;
     }
     return [];
@@ -50,12 +46,10 @@ export const useFavorites = () => {
         // preciso criar um novo banco de dados
         newDb = [data];
       }
-      console.log({ newDb });
       const jsonValue = JSON.stringify(newDb);
       await AsyncStorage.setItem(DB_KEY, jsonValue);
       return newDb;
     } catch (error) {
-      console.log({ error });
       return { error };
     }
   };

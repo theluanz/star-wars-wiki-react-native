@@ -4,10 +4,8 @@ export const useGetData = () => {
   const getFilms = async () => {
     try {
       const response = await api.get('/films');
-      // console.log(response.data);
       return response.data;
     } catch (error) {
-      // console.log({ error });
       return { error };
     }
   };
@@ -17,7 +15,6 @@ export const useGetData = () => {
       const response = await api.get('/characters');
       return response.data;
     } catch (error) {
-      // console.log({ error });
       return { error };
     }
   };
@@ -30,7 +27,6 @@ export const useGetData = () => {
       });
       return response.data;
     } catch (error) {
-      // console.log({ error });
       return { error };
     }
   };
