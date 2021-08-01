@@ -14,7 +14,7 @@ import {
 import { ThemeProvider } from 'styled-components';
 import { theme } from './src/styles';
 import { Routes } from './src/routes';
-
+import { StatusBar } from 'react-native';
 // AsyncStorage.clear();
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -27,8 +27,11 @@ export default function App() {
   if (!fontsLoaded) {
     return <AppLoading />;
   }
+  StatusBar.setBarStyle('light-content');
+
   return (
     <ThemeProvider theme={theme}>
+      <StatusBar />
       <Routes />
     </ThemeProvider>
   );

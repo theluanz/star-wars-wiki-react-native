@@ -14,7 +14,7 @@ import { BottomBar } from '~/components';
 const BottomRoute = () => {
   const Tab = createBottomTabNavigator();
   return (
-    <Tab.Navigator tabBar={(props) => <BottomBar {...props} />}>
+    <Tab.Navigator mode="modal" tabBar={(props) => <BottomBar {...props} />}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen
         options={{ tabBarLabel: 'Pesquisar' }}
@@ -35,7 +35,20 @@ export const Routes = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none">
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+          cardStyle: { backgroundColor: 'transparent' },
+          cardOverlayEnabled: true,
+          cardStyleInterpolator: ({ current: { progress } }) => ({
+            cardStyle: {
+              opacity: progress.interpolate({
+                inputRange: [0, 0.5, 0.9, 1],
+                outputRange: [0, 0.25, 0.7, 1],
+              }),
+            },
+          }),
+        }}>
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Home" component={BottomRoute} />
         <Stack.Screen name="Detail" component={Detail} />

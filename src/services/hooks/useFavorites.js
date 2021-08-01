@@ -40,7 +40,7 @@ export const useFavorites = () => {
         // já existe um banco de dados
         const db = JSON.parse(value);
         newDb = db.filter(
-          (item) => item.id !== data.id && item.type !== data.type
+          (item) => item.id !== data.id && item.title !== data.title
         );
       } else {
         // preciso criar um novo banco de dados

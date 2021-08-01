@@ -11,7 +11,7 @@ import favoriteRemovedImage from '~/../assets/favorite-removed.png';
 
 export const FavoriteStateModal = ({ visible, onClose, type }) => {
   return (
-    <Modal visible={visible} trasparent={true} onRequestClose={onClose}>
+    <Modal visible={visible} transparent={true} onRequestClose={onClose}>
       <ModalBackgroundContainer>
         <ModalContentContainer>
           <FavoriteImage
