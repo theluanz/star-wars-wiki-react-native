@@ -8,9 +8,9 @@ In 5 days, we code it using Expo (React Native).
 ![Alt Text](https://media.giphy.com/media/6OECbfhIGPGF7vaozV/giphy.gif)
 
 ## Useful Links:
-Figma for the project: https://www.figma.com/file/FcJqDIFJpy43Zik4QhoJ39/DevRiseWeek-StarWars?node-id=2%3A2
+Figma for the project: https://www.figma.com/file/FcJqDIFJpy43Zik4QhoJ39/DevRiseWeek-StarWars
 
-Project published on expo: https://expo.dev/@sevencoders/StarWarsWiki
+Project published on expo: https://expo.dev/@theluanz/StarWarsWiki
 
 Youtbe Playlist Tutorial: https://www.youtube.com/playlist?list=PL4zG19BCs4pdPJzElbUxCykHTClU-B0Ts
 
